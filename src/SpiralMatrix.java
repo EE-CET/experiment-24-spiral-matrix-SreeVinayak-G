@@ -3,13 +3,13 @@ public class SpiralMatrix {
         private static List<Integer> spiral(int[][] mat){
                 int left=0,top=0,right = mat[0].length-1,bottom = mat.length-1;
                 List<Integer> ls = new ArrayList<>();
-                while(left<=right && top<=bottom){
+                while(top<=bottom && left<=right){
                         for(int i=left;i<=right;i++){
                                 ls.add(mat[top][i]);
                         }
                         top++;
                         for(int i=top;i<=bottom;i++){
-                                ls.add(mat[i][bottom]);
+                                ls.add(mat[i][right]);
                         }
                         right--;
                         if(top<=bottom){
